@@ -1,0 +1,42 @@
+{
+    "files.associations": {
+        "*.dlgraph": "yaml",
+    },
+
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+    },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": "${env:_EDL_CONDA_PYTHON_EXE_PATH}",
+
+    "python.languageServer": "Pylance",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/dltide_pub",
+        "${workspaceFolder}/dltide_pub/dlgraph",
+        "${workspaceFolder}/dltide_pub/rbdl-package",
+        "./dltide_pub/rbdl-package"
+    ],
+
+    // Pylint
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--rcfile=${workspaceFolder}/.vscode/.pylintrc"
+    ],
+    // pydocstyle
+    "python.linting.pydocstyleEnabled": false,
+    // Flake8 (PyFlakes + pycodestyle, i.e. PEP8 + McCabe)
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": ["--max-line-length=120" ],
+    // General linting settings
+    "python.linting.lintOnSave": true,
+    "python.linting.enabled": true,
+}

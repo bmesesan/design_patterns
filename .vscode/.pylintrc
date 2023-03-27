@@ -1,0 +1,12 @@
+[MASTER]
+init-hook='
+import sys
+from pylint.config import find_pylintrc
+
+
+dltide_path = os.path.join(os.path.dirname(find_pylintrc()), '..')
+
+sys.path.insert(0, os.path.join(dltide_path, "dltide_pub"))
+sys.path.insert(0, os.path.join(dltide_path, "dltide_pub", "dlgraph"))
+sys.path.insert(0, os.path.join(dltide_path, "dltide_pub", "rbdl-package"))
+'
