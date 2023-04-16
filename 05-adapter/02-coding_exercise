@@ -1,0 +1,28 @@
+class Square:
+    def __init__(self, side=0):
+        self.side = side
+
+def calculate_area(rc):
+    return rc.width * rc.height
+
+class Rectangle:
+    def __init__(self, height=0, width=0):
+        self.height = height
+        self.width = width
+
+class SquareToRectangleAdapter(list):
+    def __init__(self, square):
+        # TODO
+        # self.h = hash(square)
+        self.height = square.side
+        self.width = square.side
+        # self.cache[self.h] = Rectangle(square.side, square.side)
+        self.append(Rectangle(square.side, square.side))
+
+my_sq = Square(10)
+my_rect = SquareToRectangleAdapter(my_sq)
+print(calculate_area(my_rect))
+
+my_sq_1 = Square(11)
+my_rect_1 = SquareToRectangleAdapter(my_sq_1)
+print(calculate_area(my_rect_1))
