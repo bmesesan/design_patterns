@@ -53,6 +53,7 @@ class BinaryOp:
             self.right = int_value
             self.update_val()
 
+
 class ExpressionProcessor:
     def __init__(self):
         self.variables = {}
