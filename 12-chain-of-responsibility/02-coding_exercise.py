@@ -67,5 +67,5 @@ if __name__ == "__main__":
     goblin = Goblin(game)
     game.creatures.append(goblin)
 
-    assert(1, goblin.attack)
-    assert(1, goblin.defense)
+    assert (goblin.attack == 1)
+    assert (goblin.defense == 1)
